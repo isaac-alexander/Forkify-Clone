@@ -19,9 +19,7 @@ body {
         margin: 0;
         border-radius: 0;
     }
-}
 
-@media only screen and (max-width: 68.75em) {
     html {
         font-size: 50%;
     }
@@ -29,7 +27,7 @@ body {
 
 .container {
     max-width: 120rem;
-    margin: 0;
+    margin: 0 auto;
     background-color: #fff;
     border-radius: 6px;
     overflow: hidden;
@@ -63,7 +61,7 @@ body {
     align-items: center;
     padding-left: 3rem;
     margin-right: 5.8rem;
-    transition: all .3s;
+    transition: all 0.3s;
 }
 
 .search_field {
@@ -80,9 +78,6 @@ body {
 .btn {
     padding: 1.3rem 3rem;
     font-size: 1.4rem;
-}
-
-.btn {
     background: linear-gradient(to right bottom, #b47722, #8b386a);
     border-radius: 10rem;
     border: none;
@@ -91,18 +86,12 @@ body {
     cursor: pointer;
     display: flex;
     align-items: center;
-    transition: all .2s, transform .1s;
+    transition: all 0.2s, transform 0.1s;
 }
 
-.btn>:first-child,
-.btn-small>:first-child {
+.btn> :first-child,
+.btn-small> :first-child {
     margin-right: 1rem;
-}
-
-.btn .search_icon {
-    height: 2.25rem;
-    width: 2.25rem;
-    color: #fff;
 }
 
 .results,
@@ -122,7 +111,7 @@ body {
     display: flex;
     align-items: center;
     height: 100%;
-    transition: all .3s;
+    transition: all 0.3s;
 }
 
 .likes_icon {
@@ -142,12 +131,14 @@ body {
     box-shadow: 0 0.8rem 5rem 2rem rgba(101, 90, 86, 0.1);
     visibility: hidden;
     opacity: 0;
-    transition: all .5s .2s;
+    transition: all 0.5s 0.2s;
 }
 
 .results_list,
 .likes_list {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .results_pages,
@@ -155,7 +146,6 @@ body {
     margin-top: 3rem;
     padding: 0 3rem;
 }
-
 
 .recipe {
     background-color: #F9F5F3;
@@ -177,11 +167,38 @@ body {
     text-align: center;
 }
 
+.btn--small {
+    font-size: 1.2rem;
+    padding: 0.8rem 2rem;
+    margin: 1rem auto;
+    display: flex;
+    align-items: center;
+}
+
 .shopping_list {
     list-style: none;
     max-height: 97rem;
     overflow: hidden;
     position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.shopping_item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.3rem 0;
+    border-bottom: 1px solid #F2EFEE;
+    font-size: 1.4rem;
+}
+
+.shopping_delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #c0392b;
+    font-size: 1.6rem;
 }
 
 .copyright {
@@ -192,9 +209,26 @@ body {
 
 .message {
     padding: 2rem;
-    font-size: 1.4rem;
-    color: #666;
+    font-size: 50px;
+    color: #d38212;
     text-align: center;
+    animation: spin 3s linear infinite;
+
+}
+
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.message-failed {
+    padding: 2rem;
+    font-size: 20px;
+    color: #d38212;
+    text-align: center;
+    animation: 3s linear infinite;
 }
 
 .preview {
@@ -255,7 +289,6 @@ body {
     text-align: center;
 }
 
-
 .recipe__publisher {
     font-size: 1.6rem;
     text-align: center;
@@ -264,16 +297,13 @@ body {
 }
 
 .recipe__ingredients {
-    padding: 4rem 5rem;
-    font-size: 1.5rem;
-    line-height: 1.4;
     background-color: #F2EFEE;
     display: flex;
     flex-direction: column;
     align-items: center;
     list-style: none;
-    padding: 0;
     margin-top: 2rem;
+    padding: 0;
 }
 
 .ingredient {
@@ -281,4 +311,42 @@ body {
     background-color: #f9f5f3;
     border-bottom: 1px solid #e0dcd9;
     font-size: 1.5rem;
+    width: 100%;
+    text-align: center;
+}
+
+.recipe__directions {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.recipe__directions-text {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+.recipe__btn {
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+    background: linear-gradient(to right bottom, #b47722, #8b386a);
+    border-radius: 10rem;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.search_btn,
+.btn--small:hover,
+.btn-like,
+.recipe__btn:hover {
+    background: linear-gradient(to right bottom, #a83279, #d38312);
+}
+
+.recipe__btn i {
+    margin-left: 0.5rem;
 }
